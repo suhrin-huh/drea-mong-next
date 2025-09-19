@@ -5,8 +5,21 @@
 
 @theme {
   /* color */
-  --color-primary: oklch(0.704 0.157 276.4);
+  --color-primary: oklch(0.704 0.216 275.7);
+  --color-primary-hover: oklch(0.64 0.23 275.7);
 
+  --color-secondary: oklch(0.8 0.05 250);
+  --color-secondary-hover: oklch(0.75 0.06 250);
+
+  --color-success: oklch(0.78 0.2 140);
+  --color-success-hover: oklch(0.72 0.23 140);
+
+  --color-danger: oklch(0.68 0.25 27);
+  --color-danger-hover: oklch(0.62 0.28 27);
+
+  --color-outlined: oklch(0.88 0.03 250);
+  --color-outlined-hover: oklch(0.83 0.04 250);
+  
   /* spacing */
   --spacing-xs: 0.125rem; /* 2 */
   --spacing-sm: 0.25rem; /*  4*/
@@ -27,55 +40,35 @@
   --radius-4xl: 2rem; /* 32 */
 
   /* text */
-  --text-xs: 0.75rem;
-  --text-xs--line-height: calc(1 / 0.75);
-  --text-sm: 0.875rem;
-  --text-sm--line-height: calc(1.25 / 0.875);
-  --text-base: 1rem;
-  --text-base--line-height: calc(1.5 / 1);
-  --text-lg: 1.125rem;
-  --text-lg--line-height: calc(1.75 / 1.125);
-  --text-xl: 1.25rem;
-  --text-xl--line-height: calc(1.75 / 1.25);
-  --text-2xl: 1.5rem;
-  --text-2xl--line-height: calc(2 / 1.5);
-  --text-3xl: 1.875rem;
-  --text-3xl--line-height: calc(2.25 / 1.875);
-  --text-4xl: 2.25rem;
-  --text-4xl--line-height: calc(2.5 / 2.25);
-  --text-5xl: 3rem;
-  --text-5xl--line-height: 1;
-  --text-6xl: 3.75rem;
-  --text-6xl--line-height: 1;
-  --text-7xl: 4.5rem;
-  --text-7xl--line-height: 1;
-  --text-8xl: 6rem;
-  --text-8xl--line-height: 1;
-  --text-9xl: 8rem;
-  --text-9xl--line-height: 1;
+  /* Heading styles */
+  --text-h1:  2.25rem; /* 36px */
+  --text-h1--line-height: 2.75rem; /* 44px */
+  --text-h2: 1.875rem; /* 30px */
+  --text-h2--line-height: 2.25rem; /* 36px */
+  --text-h3: 1.5rem; /* 24px */
+  --text-h3--line-height: 2rem; /* 32px */
+
+  /* Body styles */
+  --text-body-lg: 1rem; /* 16px */
+  --text-body--line-height: 1.5rem; /* 24px */
+
+  --text-body-md: 0.875rem; /* 14px */
+  --text-body-md--line-height: 1.25rem; /* 20px */
+
+  --text-body-sm: 0.75rem; /* 12px */
+  --text-body-sm--line-height: 1rem; /* 16px */
+
+  /* Caption */
+  --text-caption:  0.625rem; /* 10px */
+  --text-caption--line-height: 1rem; /* 16px */
 }
 
-html,
 body {
   min-width: 300px;
   min-height: 600px;
   width: 100dvw;
   height: 100dvh;
   overflow-x: hidden;
-}
-
-body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
