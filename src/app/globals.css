@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
 
 /* 참고 문헌 https://tailwindcss.com/docs/theme#default-theme-variable-reference */
 /* 새로운 클래스를 만들고 싶으면 @layer, 기존값만 확장하고 싶다면 @theme*/
@@ -19,7 +22,7 @@
 
   --color-outlined: oklch(0.88 0.03 250);
   --color-outlined-hover: oklch(0.83 0.04 250);
-  
+
   /* spacing */
   --spacing-xs: 0.125rem; /* 2 */
   --spacing-sm: 0.25rem; /*  4*/
@@ -41,7 +44,7 @@
 
   /* text */
   /* Heading styles */
-  --text-h1:  2.25rem; /* 36px */
+  --text-h1: 2.25rem; /* 36px */
   --text-h1--line-height: 2.75rem; /* 44px */
   --text-h2: 1.875rem; /* 30px */
   --text-h2--line-height: 2.25rem; /* 36px */
@@ -59,7 +62,7 @@
   --text-body-sm--line-height: 1rem; /* 16px */
 
   /* Caption */
-  --text-caption:  0.625rem; /* 10px */
+  --text-caption: 0.625rem; /* 10px */
   --text-caption--line-height: 1rem; /* 16px */
 }
 
