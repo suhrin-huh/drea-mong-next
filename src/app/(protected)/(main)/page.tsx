@@ -32,14 +32,12 @@ export default function MainPage() {
     setMonth(number);
   };
 
-  const handleClick = () => {};
-
   return (
     <>
       <UserGreeting />
       <BottomSheetLayout>
         <DateSelector year={year} month={month} handleMonth={handleMonth} handleYear={handleYear} />
-        <DreamList dreams={dreams} handleClick={handleClick} />
+        <DreamList dreams={dreams} />
       </BottomSheetLayout>
     </>
   );
