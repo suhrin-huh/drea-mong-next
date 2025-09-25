@@ -1,4 +1,4 @@
-export const MydreamListMock = [
+export const myDreamListMock = [
   {
     dreamId: 1,
     writeTime: "2025-08-01",

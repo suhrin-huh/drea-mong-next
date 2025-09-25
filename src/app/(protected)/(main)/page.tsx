@@ -18,12 +18,12 @@ type Dreams = {
 }[];
 
 // mock
-import { MydreamListMock } from "@/mocks/dream.mock";
+import { myDreamListMock } from "@/mocks/dream.mock";
 import { MIN_YEAR } from "@/constants/dream.constants";
 
 export default function MainPage() {
   const current = new Date();
-  const [dreams, setDreams] = useState<Dreams>(MydreamListMock);
+  const [dreams, setDreams] = useState<Dreams>(myDreamListMock);
   const [year, setYear] = useState(current.getFullYear());
   const [month, setMonth] = useState(current.getMonth() + 1);
 
