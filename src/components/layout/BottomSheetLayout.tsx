@@ -4,7 +4,7 @@ type BottomSheetLayoutProps = Readonly<{
 
 export default function BottomSheetLayout({ children }: BottomSheetLayoutProps) {
   return (
-    <div className={"flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto rounded-t-xl bg-white p-4"}>
+    <div className={"p-lg gap-md flex min-h-0 flex-1 flex-col rounded-t-xl bg-white"}>
       {children}
     </div>
   );

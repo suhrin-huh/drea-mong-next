@@ -66,12 +66,8 @@
   --text-caption--line-height: 1rem; /* 16px */
 }
 
+html,
 body {
-  min-width: 300px;
-  min-height: 600px;
   width: 100dvw;
   height: 100dvh;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
