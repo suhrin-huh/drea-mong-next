@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="ko">
       <body>
         <div className="h-full w-full bg-slate-500">
-          <div className="mx-auto flex h-full min-h-[600px] w-full min-w-[300px] max-w-[500px] flex-col bg-[url(/background.svg)]">
+          <div className="mx-auto flex h-full min-h-[600px] w-full min-w-[300px] max-w-[500px] flex-col bg-[url(/background.svg)] bg-cover bg-center">
             {children}
           </div>
         </div>
