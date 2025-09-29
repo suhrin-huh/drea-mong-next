@@ -13,7 +13,7 @@ interface DreamListProps {
 export default function DreamList({ dreams }: DreamListProps) {
   const handleClick = () => {};
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-scroll">
+    <div className="hide-scrollbar flex min-h-0 flex-1 flex-col gap-1 overflow-y-scroll">
       {dreams.map((dream) => (
         <DreamItem key={dream.dreamId} dream={dream} handleClick={handleClick} />
       ))}

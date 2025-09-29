@@ -1,3 +1,4 @@
+// component
 import Navbar from "@/components/common/Navbar";
 
 export default function AppLayout({
@@ -6,11 +7,13 @@ export default function AppLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={"flex h-full w-full flex-col"}>
-      {/* main*/}
-      <div className={`flex min-h-0 flex-1 flex-col`}>{children}</div>
+    <>
+      {/* main */}
+      <div className="flex min-h-0 flex-1 flex-col">{children}</div>
       {/* Navbar */}
       <Navbar />
-    </div>
+    </>
   );
 }
+
+// TODO: flex-1은 직속 부모가 flex일 때 정상 동작한다. (+ min-h-0)

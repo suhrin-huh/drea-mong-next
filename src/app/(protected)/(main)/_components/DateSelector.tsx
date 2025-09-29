@@ -26,9 +26,9 @@ export default function DateSelector({ year, month, handleMonth, handleYear }: D
   }, [month]);
 
   return (
-    <div className={"flex flex-col gap-4"}>
+    <div className={"h-fit space-y-4"}>
       {/* 년도 선택 */}
-      <div className="flex items-center justify-center gap-12 text-xl">
+      <div className="flex items-center justify-center gap-x-12 text-xl">
         <button onClick={() => handleYear(-1)}>{"<"}</button>
         <p className="text-lg">{year}</p>
         <button onClick={() => handleYear(1)}>{">"}</button>
@@ -44,17 +44,18 @@ export default function DateSelector({ year, month, handleMonth, handleYear }: D
         slideToClickedSlide={true}
         className="mySwiper w-full"
       >
-        {Array.from({ length: 12 }).map((_, i) => (
-          <SwiperSlide key={i} onClick={() => handleMonth(i + 1)} className="">
-            <div
-              className={`flex items-center justify-center rounded-lg py-3 ${month == i + 1 ? "bg-violet-500" : "border border-solid border-slate-200"}`}
-            >
-              <p className={`text-sm ${i + 1 == month ? "text-white" : "text-slate-600"}`}>
-                {i + 1}월
-              </p>
-            </div>
-          </SwiperSlide>
-        ))}
+        {Array.from({ length: 12 }).map((_, i) => {
+          const isSelectedMonth = month == i + 1;
+          return (
+            <SwiperSlide key={i} onClick={() => handleMonth(i + 1)}>
+              <div
+                className={`flex items-center justify-center rounded-lg py-3 ${isSelectedMonth ? "bg-violet-500 text-white" : "border border-solid border-slate-200 text-slate-600"}`}
+              >
+                <p>{i + 1}월</p>
+              </div>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );
