@@ -2,17 +2,11 @@
 
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-type Variant =
-  | "none"
-  | "primary"
-  | "secondary"
-  | "success"
-  | "danger"
-  | "outlined";
+type Variant = "none" | "primary" | "secondary" | "success" | "danger" | "outlined";
 
-type Size = "sm" | "md" | "lg" | "full";
+type Size = "none" | "sm" | "md" | "lg" | "full";
 
-type Rounded = "sm" | "md" | "lg" | "full";
+type Rounded = "none" | "sm" | "md" | "lg" | "full";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
@@ -30,8 +24,7 @@ export default function Button({
   className = "",
   ...props
 }: ButtonProps) {
-  const baseClasses =
-    "text-center w-fit text-sm transition-colors duration-200";
+  const baseClasses = "text-center w-fit text-sm transition-colors duration-200";
 
   const variantClasses = {
     none: "",
@@ -43,6 +36,7 @@ export default function Button({
   };
 
   const sizeClasses = {
+    none: "",
     sm: "px-3",
     md: "px-4",
     lg: "px-6",
@@ -50,6 +44,7 @@ export default function Button({
   };
 
   const roundedClasses = {
+    none: "",
     sm: "rounded-sm",
     md: "rounded-md",
     lg: "rounded-lg",
