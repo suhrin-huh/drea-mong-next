@@ -1,5 +1,5 @@
 // component
-import Navbar from "@/components/common/Navbar";
+import NavBar from "@/components/bar/NavBar";
 
 export default function AppLayout({
   children,
@@ -11,7 +11,7 @@ export default function AppLayout({
       {/* main */}
       <div className="flex min-h-0 flex-1 flex-col">{children}</div>
       {/* Navbar */}
-      <Navbar />
+      <NavBar />
     </>
   );
 }
