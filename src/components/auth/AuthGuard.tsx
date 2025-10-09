@@ -10,7 +10,8 @@ interface AuthGuardProps {
 
 export default async function AuthGuard({ mode, redirectTo, children }: AuthGuardProps) {
   const cookieStore = await cookies();
-  const token = cookieStore.get("accessToken")?.value;
+  const token = cookieStore.get("refreshToken")?.value;
+  console.log("authGuard에서 확인하는 쿠키", token);
   const isAuthenticated = !!token;
 
   if (mode === "protected" && !isAuthenticated) {
