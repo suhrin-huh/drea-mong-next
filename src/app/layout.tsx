@@ -14,8 +14,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // :TODO 이 부분, 부모 요소에 flex를 사용하고 싶지 않아서 mx-auto 사용
   return (
     <html lang="ko">
+      <head>
+        {/* pretendard */}
+        {/* <link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" /> */}
+        {/* noto sans kr */}
+        <link
+          rel="stylesheet"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        />
+      </head>
       <body>
         <div className="h-full w-full bg-slate-500">
           <div className="mx-auto flex h-full min-h-[600px] w-full min-w-[300px] max-w-[500px] flex-col bg-[url(/background.svg)] bg-cover bg-center">
