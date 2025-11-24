@@ -7,12 +7,22 @@ import { useState } from "react";
 import BottomSheetLayout from "@/components/layout/BottomSheetLayout";
 import SettingsOption from "./_components/SettingsOption";
 import ToggleButton from "@/components/common/ToggleButton";
+import httpClient from "@/lib/api/httpClient";
+import { endpoints } from "@/lib/api/endpoints";
 
 export default function SettingsPage() {
   const [pushEnabled, setPushEnabled] = useState(false);
 
   const handlePushEnabled = () => {
     setPushEnabled((prev) => !prev);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await httpClient.post(endpoints.auth.logout);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -28,7 +38,7 @@ export default function SettingsPage() {
           handleClick={handlePushEnabled}
         />
         <SettingsOption label="취침시간 설정하기" handleClick={() => {}} />
-        <SettingsOption label="로그아웃" handleClick={() => {}} />
+        <SettingsOption label="로그아웃" handleClick={handleLogout} />
       </BottomSheetLayout>
     </div>
   );
