@@ -19,6 +19,7 @@ import { Dream } from "@/types/dream";
 import { myDreamListMock } from "@/mocks/dream.mock";
 
 export default function MainPage() {
+  // :TODO 여기 그냥 상위에서 로직 담당하는 걸로!
   const current = new Date();
   const [dreams, setDreams] = useState<Dream[]>(myDreamListMock);
   const [year, setYear] = useState(current.getFullYear());
@@ -28,7 +29,7 @@ export default function MainPage() {
     setYear((prev) => Math.max(prev + number, MIN_YEAR));
   };
 
-  const handleMonth = async (number: number) => {
+  const handleMonth = (number: number) => {
     setMonth(number);
   };
 
