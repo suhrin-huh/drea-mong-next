@@ -3,5 +3,5 @@ export default function SquareLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className={"flex h-full flex-col bg-black/20"}>{children}</div>;
+  return <div className={"flex h-full flex-col bg-black"}>{children}</div>;
 }
