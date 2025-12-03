@@ -4,17 +4,17 @@
 import DreamItem from "./DreamItem";
 
 // types
-import { Dream } from "@/types/dream";
+import { MyDreamList } from "@/types/dream";
 
 interface DreamListProps {
-  dreams: Dream[];
+  dreamList: MyDreamList;
 }
 
-export default function DreamList({ dreams }: DreamListProps) {
+export default function DreamList({ dreamList }: DreamListProps) {
   const handleClick = () => {};
   return (
     <div className="hide-scrollbar flex min-h-0 flex-1 flex-col gap-1 overflow-y-scroll">
-      {dreams.map((dream) => (
+      {dreamList.map((dream) => (
         <DreamItem key={dream.dreamId} dream={dream} handleClick={handleClick} />
       ))}
     </div>
