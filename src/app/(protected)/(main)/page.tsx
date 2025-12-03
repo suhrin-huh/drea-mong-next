@@ -1,44 +1,25 @@
-"use client";
-
-// library
-import { useState } from "react";
-
 // component
 import BottomSheetLayout from "@/components/layout/BottomSheetLayout";
 import UserGreeting from "./_components/UserGreeting";
-import DateSelector from "./_components/DateSelector";
-import DreamList from "./_components/DreamList";
+import MainClientComponent from "./_components/MainClientComponent";
+import { getMyProfileServer, getMyDreamListServer } from "@/lib/api/queries";
 
-// constant
-import { MIN_YEAR } from "@/constants/dream.constants";
+export default async function MainPage() {
+  // 유저 정보 가져오기
+  const profileRes = await getMyProfileServer();
+  const profile = profileRes.data;
 
-// type
-import { Dream } from "@/types/dream";
-
-// mock
-import { myDreamListMock } from "@/mocks/dream.mock";
-
-export default function MainPage() {
-  // :TODO 여기 그냥 상위에서 로직 담당하는 걸로!
-  const current = new Date();
-  const [dreams, setDreams] = useState<Dream[]>(myDreamListMock);
-  const [year, setYear] = useState(current.getFullYear());
-  const [month, setMonth] = useState(current.getMonth() + 1);
-
-  const handleYear = (number: number) => {
-    setYear((prev) => Math.max(prev + number, MIN_YEAR));
-  };
-
-  const handleMonth = (number: number) => {
-    setMonth(number);
-  };
-
+  // 꿈 목록 가져오기
+  const dreamListRes = await getMyDreamListServer(
+    new Date().getFullYear(),
+    new Date().getMonth() + 1,
+  );
+  const initialDreamList = dreamListRes.data;
   return (
     <>
-      <UserGreeting />
+      <UserGreeting profile={profile} />
       <BottomSheetLayout>
-        <DateSelector year={year} month={month} handleMonth={handleMonth} handleYear={handleYear} />
-        <DreamList dreams={dreams} />
+        <MainClientComponent initialDreamList={initialDreamList} />
       </BottomSheetLayout>
     </>
   );

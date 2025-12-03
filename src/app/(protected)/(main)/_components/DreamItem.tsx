@@ -2,13 +2,13 @@
 import Image from "next/image";
 
 // types
-import { Dream } from "@/types/dream";
+import { MyDreamSummary } from "@/types";
 
 // lib&util
 import { formatDate } from "@/utils/formatter";
 
 interface DreamItemProps {
-  dream: Dream;
+  dream: MyDreamSummary;
   handleClick: () => void;
 }
 

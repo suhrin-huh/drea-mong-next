@@ -1,11 +1,18 @@
 "use client";
 
+// library
 import { useState } from "react";
 
-import { userInfoMock } from "@/mocks/user.mock";
+// types
+import { Profile } from "@/types";
 
-export default function UserGreeting() {
+interface UserGreetingProps {
+  profile: Profile;
+}
+
+export default function UserGreeting({ profile }: UserGreetingProps) {
   const [isOpen, setIsOpen] = useState(false);
+
   const handleClick = () => {
     setIsOpen((prev) => !prev);
   };
@@ -14,20 +21,15 @@ export default function UserGreeting() {
     <div
       className={`text-h3 flex flex-col items-center justify-center gap-3 overflow-hidden text-white transition-all duration-300 ease-in-out ${isOpen ? "h-[200px]" : "h-[600px]"} `}
     >
-      <p>안녕하세요, {userInfoMock.username} 님!</p>
+      <p>안녕하세요, {profile.nickname} 님!</p>
       <button onClick={handleClick}>Click!</button>
       <p
         className={`text-base transition-all duration-1000 ease-in-out ${isOpen ? "text-black opacity-0" : "text-white"} `}
       >
-        오늘도 행복한 하루 보내시길 바랍니다.
+        {!!profile.totalCount
+          ? `${profile.totalCount + 1}번째 꿈을 작성하세요.`
+          : `첫번째 꿈을 작성해주세요.`}
       </p>
-    </div>
-  );
-
-  return (
-    <div className={"text-h3 flex h-[200px] flex-col items-center justify-center gap-3 text-white"}>
-      <p>안녕하세요, {userInfoMock.username} 님!</p>
-      <button onClick={handleClick}>클릭하기</button>
     </div>
   );
 }
