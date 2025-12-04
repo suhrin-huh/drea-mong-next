@@ -1,16 +1,17 @@
-"use client";
+// API 연동
+import { getSharedDreamListServer } from "@/lib/api/queries";
 
 // components
-import SquareItem from "./_components/SquareItem";
+import SharedDreamCard from "./_components/SharedDreamCard";
 
-// mock
-import { myDreamListMock } from "@/mocks/dream.mock";
+export default async function SharedDreamFeedPage() {
+  const sharedDreamListRes = await getSharedDreamListServer();
+  const sharedDreamList = sharedDreamListRes.data;
 
-export default function SquarePage() {
   return (
-    <div className="hide-scrollbar px-lg pt-2xl gap-sm grid grid-cols-3 overflow-y-scroll">
-      {myDreamListMock.map((dream) => (
-        <SquareItem dream={dream} key={dream.dreamId} />
+    <div className="hide-scrollbar px-lg pt-2xl gap-sm grid flex-1 grid-cols-3 overflow-y-scroll bg-black/10">
+      {sharedDreamList.map((dream) => (
+        <SharedDreamCard dream={dream} key={dream.dreamId} />
       ))}
     </div>
   );
