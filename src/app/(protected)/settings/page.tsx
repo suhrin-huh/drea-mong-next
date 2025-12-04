@@ -7,8 +7,6 @@ import { useState } from "react";
 import BottomSheetLayout from "@/components/layout/BottomSheetLayout";
 import SettingsOption from "./_components/SettingsOption";
 import ToggleButton from "@/components/common/ToggleButton";
-import httpClient from "@/lib/api/httpClient";
-import { endpoints } from "@/lib/api/endpoints";
 
 export default function SettingsPage() {
   const [pushEnabled, setPushEnabled] = useState(false);
@@ -17,13 +15,7 @@ export default function SettingsPage() {
     setPushEnabled((prev) => !prev);
   };
 
-  const handleLogout = async () => {
-    try {
-      await httpClient.post(endpoints.auth.logout);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const handleLogout = async () => {};
 
   return (
     <div className="flex h-full flex-col">
