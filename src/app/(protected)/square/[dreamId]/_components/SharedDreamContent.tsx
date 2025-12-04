@@ -8,21 +8,22 @@ import Image from "next/image";
 import Button from "@/components/common/Button";
 
 // types
-import { SquareDream } from "@/types/dream";
+import { SharedDreamDetail } from "@/types";
 
-interface DreamContentProps {
-  dream: SquareDream;
-}
+interface SharedDreamContentProps {
+  dream: SharedDreamDetail;
+};
 
-export default function SquareContent({ dream }: DreamContentProps) {
+export default function SharedDreamContent({ dream }: SharedDreamContentProps) {
   const [isInterpShown, setIsInterpShown] = useState(false);
   const handleClick = () => {
     setIsInterpShown((prev) => !prev);
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-3 text-white">
+    <div className="flex flex-col items-center gap-y-md">
       <Image
+        // TODO: 이 부분 해결 필요하다! 
         src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
         alt="꿈 이미지"
         width={200}
@@ -42,9 +43,10 @@ export default function SquareContent({ dream }: DreamContentProps) {
         </div>
       ) : (
         <Button size="full" variant="primary" rounded="md" onClick={handleClick}>
-          <p className="text-body-md">💡 어떤 꿈인지 궁금하다면 클릭해보세요!</p>
+          <p className="text-body-md p-md">💡 어떤 꿈인지 궁금하다면 클릭해보세요!</p>
         </Button>
       )}
     </div>
-  );
+  )
+
 }

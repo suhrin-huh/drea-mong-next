@@ -1,22 +1,28 @@
 // components
 import BottomSheetLayout from "@/components/layout/BottomSheetLayout";
 import HeaderBar from "@/components/bar/HeaderBar";
-import SquareContent from "./_components/SqaureContent";
-import SquareComment from "./_components/SquareComment";
+import SharedDreamContent from "./_components/SharedDreamContent";
+import CommentSection from "./_components/CommentSection";
 
-// mock
-import { dreamMock } from "@/mocks/dream.mock";
-import { commentsMock } from "@/mocks/comment.mock";
+// types
+import { DreamId } from "@/types";
+import { getSharedDreamDetailServer } from "@/lib/api/queries";
 
-export default function SquareDetail() {
+interface SquareDetailProps {
+  params: Promise<{ dreamId: DreamId }>;
+}
+
+export default async function SquareDetail({ params }: SquareDetailProps) {
+  const { dreamId } = await params;
+  const sharedDreamRes = await getSharedDreamDetailServer(dreamId);
+  const sharedDream = sharedDreamRes.data;
+  const initialCommentList = sharedDream.commentList;
   return (
-    <div className="flex h-full flex-col">
-      <div className="p-lg h-fit">
-        <HeaderBar />
-        <SquareContent dream={dreamMock} />
-      </div>
+    <div className="gap-y-lg flex min-h-0 flex-1 flex-col bg-black/30">
+      <HeaderBar />
+      <SharedDreamContent dream={sharedDream} />
       <BottomSheetLayout>
-        <SquareComment comments={commentsMock} />
+        <CommentSection initialCommentList={initialCommentList} />
       </BottomSheetLayout>
     </div>
   );
