@@ -37,6 +37,7 @@ export type MyDreamDetail = MyDreamSummary & {
   summary: Summary;
 };
 
+// TODO: image 타입을 어떻게 처리하는게 좋을까?? 보통 이렇게 특정페이지에서는 타입이 바뀌면 어떻게 처리를 할까?
 export type SharedDreamSummary = {
   dreamId: DreamId;
   image: Image;
