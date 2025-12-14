@@ -1,45 +1,46 @@
-"use client";
-
-// library
-import { useState, useRef } from "react";
-
 // constants
 import { FormEvent } from "react";
 
 // components
-import Button from "@/components/common/Button";
 import HeaderBar from "@/components/bar/HeaderBar";
-import DatePicker from "../_components/DatePicker";
-import ContentEditor from "../_components/ContentEditor";
-import InterpGenerator from "../_components/InterpGenerator";
-import ShareToggleBox from "../_components/ShareToggleBox";
-import ImageGenerator from "../_components/ImageGenerator";
+import MyDreamClientComponent from "../_components/MyDreamClientComponent";
 
 /**
- * @component CommentList
- * @description 댓글 목록 전체를 렌더링합니다.
+ * @component DreamNew
+ * @description 꿈 생성 페이지
  */
 export default function DreamNew() {
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // const formData = new FormData(e.currentTarget);
-    // const data = Object.fromEntries(formData);
-    // console.log(data)
-  };
+  /**
+   * 현재 날짜를 'YYYY-MM-DD' 형식의 문자열로 반환
+   * @returns {string} 예: "2025-12-15"
+   */
+  function getDateString(date: Date): string {
+    // 연도 (YYYY)
+    const year = date.getFullYear();
 
+    // 월 (MM): getMonth()는 0부터 시작하므로 +1을 해주고, 두 자리로 만듭니다.
+    // padStart(2, '0')를 사용하여 한 자리 숫자 앞에 0을 붙입니다.
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+
+    // 일 (DD): 두 자리로 만듭니다.
+    const day = String(date.getDate()).padStart(2, "0");
+
+    // YYYY-MM-DD 형식으로 조합하여 반환
+    return `${year}-${month}-${day}`;
+  }
+
+  const initialData = {
+    dreamId: null,
+    writeTime: getDateString(new Date()),
+    content: "asdfas",
+    interp: "asdf",
+    image: "asdf",
+    isShared: false,
+  };
   return (
     <>
       <HeaderBar />
-      <form onSubmit={(e) => handleSubmit(e)} className="gap-y-md flex flex-col">
-        <DatePicker initialDate={new Date()} />
-        <ContentEditor />
-        <InterpGenerator />
-        <ImageGenerator />
-        <ShareToggleBox />
-        <Button variant="primary" size="md" className="p-md mx-auto" rounded="md" type="submit">
-          저장하기
-        </Button>
-      </form>
+      <MyDreamClientComponent initialData={initialData} />
     </>
   );
 }
