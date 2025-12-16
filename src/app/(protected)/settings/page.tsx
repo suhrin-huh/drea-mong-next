@@ -5,7 +5,7 @@ import { useState } from "react";
 
 // component
 import BottomSheetLayout from "@/components/layout/BottomSheetLayout";
-import SettingsOption from "./_components/SettingsOption";
+import SettingsOption from "./_components/SettingsOption"; // TODO: SettingsOption 수정 필요!
 import ToggleButton from "@/components/common/ToggleButton";
 
 export default function SettingsPage() {
@@ -26,7 +26,7 @@ export default function SettingsPage() {
         <SettingsOption label="닉네임 변경" handleClick={() => {}} />
         <SettingsOption
           label="푸시 알림 활성화"
-          icon={<ToggleButton flag={pushEnabled} />}
+          icon={<ToggleButton checked={pushEnabled} onChange={() => {}} />}
           handleClick={handlePushEnabled}
         />
         <SettingsOption label="취침시간 설정하기" handleClick={() => {}} />

@@ -19,7 +19,7 @@ export default function ShareToggleBox({ value, onChange }: ShareToggleBoxProps)
   return (
     <div className="flex flex-row justify-between p-2">
       <p>꿈 공유하기</p>
-      <ToggleButton flag={value} handleFlag={() => onChange(!value)} />
+      <ToggleButton name="isShared" checked={value} onChange={() => onChange(!value)} />
     </div>
   );
 }

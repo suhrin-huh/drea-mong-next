@@ -33,7 +33,13 @@ export default function MyDreamClientComponent({ initialData }: MyDreamClientCom
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-    console.log(data);
+    const isShared = formData.has("isShared"); // "on" or null이므로
+    console.log(isShared); // true | false
+    const params = {
+      ...data,
+      isShared,
+    };
+    console.log(params);
   };
 
   return (
