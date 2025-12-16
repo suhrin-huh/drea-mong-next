@@ -9,8 +9,8 @@ import Button from "@/components/common/Button";
 import { Content, Interp, MyDreamDetail } from "@/types";
 
 interface InterpGeneratorProps {
-  value: Interp;
-  onChange: (value: Interp) => void;
+  value: MyDreamDetail["interp"];
+  onChange: (value: MyDreamDetail["interp"]) => void;
   getFormData: () => MyDreamDetail;
 }
 
@@ -24,7 +24,7 @@ export default function InterpGenerator({ value, onChange, getFormData }: Interp
 
   const handleInterpGenerate = useCallback(async (content: Content) => {
     setIsLoading(true);
-    onChange("");
+    onChange(null);
     // setError(null);
 
     setTimeout(() => {

@@ -4,7 +4,7 @@ import { FormEvent } from "react";
 // components
 import HeaderBar from "@/components/bar/HeaderBar";
 import MyDreamClientComponent from "../_components/MyDreamClientComponent";
-
+import { MyDreamDetail } from "@/types";
 /**
  * @component DreamNew
  * @description 꿈 생성 페이지
@@ -29,18 +29,18 @@ export default function DreamNew() {
     return `${year}-${month}-${day}`;
   }
 
-  const initialData = {
+  const initialDream: MyDreamDetail = {
     dreamId: null,
     writeTime: getDateString(new Date()),
-    content: "asdfas",
-    interp: "asdf",
-    image: "asdf",
+    content: "",
+    interp: null,
+    image: null,
     isShared: false,
   };
   return (
     <>
       <HeaderBar />
-      <MyDreamClientComponent initialData={initialData} />
+      <MyDreamClientComponent initialData={initialDream} />
     </>
   );
 }

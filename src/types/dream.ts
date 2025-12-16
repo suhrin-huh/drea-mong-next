@@ -31,10 +31,13 @@ export type MyDreamSummary = {
 
 export type MyDreamList = MyDreamSummary[];
 
-export type MyDreamDetail = MyDreamSummary & {
+export type MyDreamDetail = {
+  dreamId: number | null;
+  writeTime: WriteTime;
+  content: Content;
+  interp: Interp | null; // TODO: 타입 통합적으로 수정 필요
+  image: Image;
   isShared: IsShared;
-  interp: Interp;
-  summary: Summary;
 };
 
 export type SharedDreamSummary = {
