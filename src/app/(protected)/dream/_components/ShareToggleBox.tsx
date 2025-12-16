@@ -4,24 +4,22 @@
 import ToggleButton from "@/components/common/ToggleButton";
 
 // types
-import { IsShared, MyDreamDetail } from "@/types";
+import { IsShared } from "@/types";
 
 interface ShareToggleBoxProps {
   value: IsShared;
   onChange: (value: IsShared) => void;
-  getFormData: () => MyDreamDetail;
 }
 
-// 근데 여기에서는 form에서 값을 어떻게 조절하지???
 /**
- *
- * @returns
+ * @component ShareToggleBox
+ * @description 꿈 공유 유무를 선택
  */
-export default function ShareToggleBox({ value, onChange, getFormData }: ShareToggleBoxProps) {
+export default function ShareToggleBox({ value, onChange }: ShareToggleBoxProps) {
   return (
     <div className="flex flex-row justify-between p-2">
       <p>꿈 공유하기</p>
-      <ToggleButton flag={value} />
+      <ToggleButton flag={value} handleFlag={() => onChange(!value)} />
     </div>
   );
 }

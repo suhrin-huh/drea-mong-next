@@ -50,11 +50,7 @@ export default function MyDreamClientComponent({ initialData }: MyDreamClientCom
         onChange={(value) => updateField("image", value)}
         getFormData={getFormData}
       />
-      <ShareToggleBox
-        value={dream.isShared}
-        onChange={(value) => updateField("isShared", value)}
-        getFormData={getFormData}
-      />
+      <ShareToggleBox value={dream.isShared} onChange={(value) => updateField("isShared", value)} />
       <Button variant="primary" size="md" className="p-md mx-auto" rounded="md" type="submit">
         저장하기
       </Button>
