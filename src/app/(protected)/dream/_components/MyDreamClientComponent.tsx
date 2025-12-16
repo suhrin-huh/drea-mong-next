@@ -46,7 +46,7 @@ export default function MyDreamClientComponent({ initialData }: MyDreamClientCom
         getFormData={getFormData}
       />
       <ImageGenerator
-        value={dream.interp}
+        value={dream.image}
         onChange={(value) => updateField("image", value)}
         getFormData={getFormData}
       />
