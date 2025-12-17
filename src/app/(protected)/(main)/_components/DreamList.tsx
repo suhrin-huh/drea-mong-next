@@ -4,10 +4,10 @@
 import DreamItem from "./DreamItem";
 
 // types
-import { MyDreamList } from "@/types/dream";
+import { MyDreamSummary } from "@/types/dream";
 
 interface DreamListProps {
-  dreamList: MyDreamList;
+  dreamList: MyDreamSummary[];
 }
 
 export default function DreamList({ dreamList }: DreamListProps) {

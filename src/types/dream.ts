@@ -29,8 +29,6 @@ export type MyDreamSummary = {
   content: Content;
 };
 
-export type MyDreamList = MyDreamSummary[];
-
 export type MyDreamDetail = {
   dreamId: number | null;
   writeTime: WriteTime;

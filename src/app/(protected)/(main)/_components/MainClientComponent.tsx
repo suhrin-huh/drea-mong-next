@@ -11,10 +11,10 @@ import DreamList from "./DreamList";
 import { useYearMonth } from "@/hooks/useYearMonth";
 
 // type
-import { MyDreamList } from "@/types/dream";
+import { MyDreamSummary } from "@/types/dream";
 
 interface MainClientComponentProps {
-  initialDreamList: MyDreamList;
+  initialDreamList: MyDreamSummary[];
 }
 
 export default function MainClientComponent({ initialDreamList }: MainClientComponentProps) {

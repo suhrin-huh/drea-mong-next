@@ -13,11 +13,11 @@ import {
 // types
 import {
   MyDreamDetail,
-  MyDreamList,
   SharedDreamList,
   SharedDreamDetail,
   DreamId,
   Profile,
+  MyDreamSummary,
 } from "@/types";
 
 // TODO: 여기에서 처리를 fetcher<Profile>로 하기보다는 fetch<ApiResponse<Profile>>이 나은가..?
@@ -36,7 +36,7 @@ export async function getMyProfileServer() {
  */
 export async function getMyDreamListServer(year: number, month: number) {
   const params = new URLSearchParams({ year: String(year), month: String(month) });
-  return serverFetcher<MyDreamList>(`${GET_MY_DREAM_LIST()}?${params}`);
+  return serverFetcher<MyDreamSummary[]>(`${GET_MY_DREAM_LIST()}?${params}`);
 }
 /**
  * 꿈 상세 조회 - 서버 전용
