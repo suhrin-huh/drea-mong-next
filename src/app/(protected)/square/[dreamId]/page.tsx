@@ -18,7 +18,7 @@ export default async function SquareDetail({ params }: SquareDetailProps) {
   const sharedDream = sharedDreamRes.data;
   const initialCommentList = sharedDream.commentList;
   return (
-    <div className="gap-y-lg flex min-h-0 flex-1 flex-col bg-black/30">
+    <div className="flex min-h-0 flex-1 flex-col gap-y-lg bg-black/30">
       <HeaderBar />
       <SharedDreamContent dream={sharedDream} />
       <BottomSheetLayout>

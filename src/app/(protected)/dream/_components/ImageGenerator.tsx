@@ -92,7 +92,7 @@ function RenderButton({ disabled, handleClick }: RenderButtonProps) {
       type="button"
       onClick={handleClick}
       disabled={disabled}
-      className="p-md gap-y-md flex h-[200px] shrink-0 flex-col items-center justify-center rounded rounded-md"
+      className="flex h-[200px] shrink-0 flex-col items-center justify-center gap-y-md rounded rounded-md p-md"
     >
       <NextImage src={"/palette.png"} alt="이미지 생성 아이콘" width={80} height={80} />
       <p>꿈 이미지 생성하기</p>
@@ -112,10 +112,10 @@ interface RenderInterpProps {
 
 function RenderImage({ value, handleClick }: RenderInterpProps) {
   return (
-    <div className="aspect-1/1 relative w-full bg-black/20">
+    <div className="relative aspect-1/1 w-full bg-black/20">
       <NextImage src={value!} alt="AI로 생성된 이미지" fill className="object-cover" />
       <button
-        className="aspect-sqaure absolute right-2 top-2 w-[30px] rounded-full bg-black/40"
+        className="aspect-sqaure absolute top-2 right-2 w-[30px] rounded-full bg-black/40"
         onClick={handleClick} // 이미지 숨기기 및 초기 상태로 복귀
       >
         X
@@ -130,8 +130,8 @@ function RenderImage({ value, handleClick }: RenderInterpProps) {
  */
 function RenderLoading() {
   return (
-    <div className="gap-y-lg p-lg flex h-40 flex-col items-center justify-center rounded-lg bg-black/20">
-      <div className="border-primary h-8 w-8 animate-spin rounded-full border-4 border-t-transparent" />
+    <div className="flex h-40 flex-col items-center justify-center gap-y-lg rounded-lg bg-black/20 p-lg">
+      <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
       <p>이미지를 생성하고 있습니다.</p>
     </div>
   );

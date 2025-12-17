@@ -109,7 +109,7 @@ interface RenderInterpProps {
  */
 function RenderInterp({ value, handleClick }: RenderInterpProps) {
   return (
-    <div className="p-lg flex flex-col items-center space-y-4 rounded-lg bg-black/20">
+    <div className="flex flex-col items-center space-y-4 rounded-lg bg-black/20 p-lg">
       <p className="text-h4 font-bold">해몽 결과</p>
       <p>{value}</p>
       <Button
@@ -132,8 +132,8 @@ function RenderInterp({ value, handleClick }: RenderInterpProps) {
  */
 function RenderLoading() {
   return (
-    <div className="gap-y-lg p-lg flex h-40 flex-col items-center justify-center rounded-lg bg-black/20">
-      <div className="border-primary h-8 w-8 animate-spin rounded-full border-4 border-t-transparent" />
+    <div className="flex h-40 flex-col items-center justify-center gap-y-lg rounded-lg bg-black/20 p-lg">
+      <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
       <p>꿈을 분석하는 중입니다.</p>
     </div>
   );

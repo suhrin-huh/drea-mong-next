@@ -4,7 +4,7 @@ import BottomSheetLayout from "@/components/layout/BottomSheetLayout";
 
 export default function StreamDetailPage() {
   return (
-    <div className="py-sm flex h-full flex-col bg-black text-white">
+    <div className="flex h-full flex-col bg-black py-sm text-white">
       {/* 상단 헤더 */}
       <HeaderBar />
       {/* 영상 영역 */}
@@ -16,16 +16,16 @@ export default function StreamDetailPage() {
           className="object-cover opacity-90"
         />
         {/* Live Badge */}
-        <div className="py-sm px-md absolute left-2 top-2 rounded-md bg-red-600 text-[12px] text-white">
+        <div className="absolute top-2 left-2 rounded-md bg-red-600 px-md py-sm text-[12px] text-white">
           ● LIVE
         </div>
         {/* 시청자 수 */}
-        <div className="py-sm px-md absolute right-2 top-2 rounded-md bg-black/60 text-[12px] text-white">
+        <div className="absolute top-2 right-2 rounded-md bg-black/60 px-md py-sm text-[12px] text-white">
           0명 시청중
         </div>
       </div>
       {/* 영상 제목 및 정보 */}
-      <div className="px-md py-sm space-y-[4px]">
+      <div className="space-y-[4px] px-md py-sm">
         <h1 className="line-clamp-2 text-[16px] font-semibold">
           이것은 음악방송 테스트입니다. 이것은 음악방송 테스트입니다.
         </h1>
@@ -57,7 +57,7 @@ export default function StreamDetailPage() {
       <BottomSheetLayout isDarkMode={true} className="flex flex-1 px-0 py-0">
         <div className="flex h-full flex-col">
           {/* 채팅 메시지 리스트 */}
-          <div className="hide-scrollbar px-md py-md space-y-md border-1 flex-1 overflow-y-scroll border-t border-white/30">
+          <div className="hide-scrollbar flex-1 space-y-md overflow-y-scroll border-1 border-t border-white/30 px-md py-md">
             {Array.from({ length: 60 }).map((_, idx) => (
               <div key={idx} className={`${(idx * 3) % 7 > 2 ? "text-right" : "text-left"}`}>
                 <p className="text-[13px] font-semibold">별명</p>
@@ -66,13 +66,13 @@ export default function StreamDetailPage() {
             ))}
           </div>
           {/* 채팅 입력창 */}
-          <div className="p-md border-1 border-t border-white/30">
+          <div className="border-1 border-t border-white/30 p-md">
             <div className="flex items-center gap-x-[10px]">
               <textarea
                 placeholder="메시지 입력..."
                 className="h-[40px] flex-1 resize-none rounded-lg px-[12px] py-[10px] text-[14px] leading-[1.2] text-white placeholder-gray-400"
               />
-              <button className="text-primary text-[14px] font-semibold">보내기</button>
+              <button className="text-[14px] font-semibold text-primary">보내기</button>
             </div>
           </div>
         </div>

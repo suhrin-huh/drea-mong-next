@@ -24,7 +24,7 @@ export default function DreamItem({ dream, handleClick }: DreamItemProps) {
       <div className="relative flex h-[80px] flex-1 items-center p-2 text-white">
         <p className="z-2 line-clamp-2">{dream.content}</p>
         <div
-          className={`z-1 absolute inset-0 rounded-lg bg-black ${dream.image ? "opacity-30" : "opacity-80"}`}
+          className={`absolute inset-0 z-1 rounded-lg bg-black ${dream.image ? "opacity-30" : "opacity-80"}`}
         ></div>
         {dream.image && (
           <Image src={dream.image} alt="꿈이미지" fill className="rounded-lg object-cover" />

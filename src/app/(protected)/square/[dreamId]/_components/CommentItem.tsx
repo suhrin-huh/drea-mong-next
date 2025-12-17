@@ -33,22 +33,20 @@ export default function CommentItem({ comment }: CommentItemProps) {
     setActiveMenu((prev) => !prev);
   };
 
-  const handleDelete = (commentId: number) => {
-
-  }
+  const handleDelete = (commentId: number) => {};
   return (
-    <div key={comment.commentId} className="relative flex gap-x-3 shrink-0">
+    <div key={comment.commentId} className="relative flex shrink-0 gap-x-3">
       {/* <img
         src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
         className="aspect-square h-10 rounded-full"
       /> */}
-      <div className="space-y-sm flex-1">
+      <div className="flex-1 space-y-sm">
         <p className="font-semibold">{comment.nickname}</p>
         <p className="flex-1">
           {comment.content} {comment.content}
         </p>
       </div>
-      <button onClick={handleLike} className="pt-md h-fit">
+      <button onClick={handleLike} className="h-fit pt-md">
         {isLiked ? (
           <IoMdHeart size={20} className="text-red-700/80" />
         ) : (
@@ -59,16 +57,18 @@ export default function CommentItem({ comment }: CommentItemProps) {
         size="none"
         variant="none"
         rounded="full"
-        className="hover:bg-primary/10 aspect-square h-10 p-1"
+        className="aspect-square h-10 p-1 hover:bg-primary/10"
         onClick={toggleMenu}
       >
         <IoMdMore size={30} className="text-secondary" />
       </Button>
       {/* Action Sheet / Dropdown */}
       {activeMenu && (
-        <div className="border-secondary absolute right-[40px] top-0 z-50 mt-2 w-40 rounded-lg border bg-white shadow-lg">
-          <button className="w-full rounded-lg px-4 py-2 text-left hover:bg-gray-100" onClick={() => 
-            handleDelete(comment.commentId)}>
+        <div className="absolute top-0 right-[40px] z-50 mt-2 w-40 rounded-lg border border-secondary bg-white shadow-lg">
+          <button
+            className="w-full rounded-lg px-4 py-2 text-left hover:bg-gray-100"
+            onClick={() => handleDelete(comment.commentId)}
+          >
             삭제
           </button>
           {/* <button className="w-full rounded-b-lg px-4 py-2 text-left hover:bg-gray-100">

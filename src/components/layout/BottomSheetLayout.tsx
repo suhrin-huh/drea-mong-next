@@ -16,7 +16,7 @@ export default function BottomSheetLayout({
 }: BottomSheetLayoutProps) {
   return (
     <div
-      className={`p-lg gap-md flex min-h-0 flex-1 flex-col rounded-t-xl ${
+      className={`flex min-h-0 flex-1 flex-col gap-md rounded-t-xl p-lg ${
         isDarkMode ? "bg-gray-800 text-white" : "bg-white"
       } ${className ?? ""}`}
       {...rest}

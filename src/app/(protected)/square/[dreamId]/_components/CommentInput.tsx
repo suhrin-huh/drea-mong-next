@@ -21,36 +21,40 @@ export default function CommentInput({ onAddComment }: CommentInputProps) {
     e.preventDefault();
     const trimmedText = commentText.trim();
     if (!trimmedText) return;
-    console.log("제출!!")
+    console.log("제출!!");
     onAddComment(trimmedText);
     setCommentText("");
   };
 
   return (
-    <form onSubmit={(e) => {
-      console.log("이벤트 발생")
-      handleSubmit(e)
-    }
-    } className="flex h-fit items-center gap-x-3">
+    <form
+      onSubmit={(e) => {
+        console.log("이벤트 발생");
+        handleSubmit(e);
+      }}
+      className="flex h-fit items-center gap-x-3"
+    >
       {/* 사용자 이미지 */}
       {/* <img
         src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
         className="aspect-square h-10 rounded-full"
       /> */}
-      <input value={commentText}  onChange={(e) => setCommentText(e.target.value)} placeholder="댓글을 입력하세요." className="flex-1" />
+      <input
+        value={commentText}
+        onChange={(e) => setCommentText(e.target.value)}
+        placeholder="댓글을 입력하세요."
+        className="flex-1"
+      />
       <button
         type="submit"
         disabled={!commentText.trim()}
-        className="hover:bg-primary/10 aspect-square rounded-full p-3"
+        className="aspect-square rounded-full p-3 hover:bg-primary/10"
       >
         <IoMdCheckmark />
       </button>
     </form>
   );
 }
-
-
-
 
 /**
 "use client";

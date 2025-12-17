@@ -25,7 +25,7 @@ export default function ContentEditor({ value, onChange }: ContentEditorProps) {
         className={`h-full w-full resize-none p-3 placeholder:text-slate-200`}
         placeholder="꿈 내용을 입력해주세요."
       />
-      <p className="absolute bottom-5 right-2 text-slate-500">
+      <p className="absolute right-2 bottom-5 text-slate-500">
         {value.length}/{MAX_LENGTH}
       </p>
     </div>

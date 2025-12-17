@@ -24,7 +24,7 @@ export default function ToggleButton({ name, checked, onChange }: ToggleButtonPr
       >
         {/* 토글 썸 */}
         <span
-          className={`absolute left-1 top-1 h-4 w-4 rounded-full border border-black/10 bg-white transition-transform ${checked ? "translate-x-4" : ""} `}
+          className={`absolute top-1 left-1 h-4 w-4 rounded-full border border-black/10 bg-white transition-transform ${checked ? "translate-x-4" : ""} `}
         />
       </span>
     </label>

@@ -17,7 +17,7 @@ export default function StreamPage() {
             />
 
             {/* 시청자 수 배지 */}
-            <span className="p-md absolute bottom-2 right-2 rounded-md bg-black/70 text-[12px] text-white">
+            <span className="absolute right-2 bottom-2 rounded-md bg-black/70 p-md text-[12px] text-white">
               🔴 3명 시청중
             </span>
           </div>
