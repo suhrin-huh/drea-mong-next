@@ -13,7 +13,7 @@ import {
 // types
 import {
   MyDreamDetail,
-  SharedDreamList,
+  SharedDreamSummary,
   SharedDreamDetail,
   DreamId,
   Profile,
@@ -49,7 +49,7 @@ export async function getMyDreamDetailServer(dreamId: DreamId) {
  * 공유된 꿈 목록 조회 - 서버 전용
  */
 export async function getSharedDreamListServer() {
-  return serverFetcher<SharedDreamList>(GET_SHARED_DREAM_LIST());
+  return serverFetcher<SharedDreamSummary[]>(GET_SHARED_DREAM_LIST());
 }
 /**
  * 공유된 꿈 상세 조회 - 서버 전용
