@@ -24,7 +24,7 @@ export const GENERATE_IMAGE = () => `/dreams/me/image`;
 export const GENERATE_INTERPRETATION = () => `/dreams/me/interpretation`;
 
 // Shared Dreams
-export const GET_SHARED_DREAM_LIST = () => `/dreams/shared`;
+export const GET_SHARED_DREAM_LIST = (cursor = 0) => `/dreams/shared?cursor=${cursor}`;
 export const GET_SHARED_DREAM_DETAIL = (dreamId: number) => `/dreams/shared/${dreamId}`;
 
 // Comments

@@ -4,13 +4,11 @@
 import { useState } from "react";
 
 // components
-import Button from "@/components/common/Button"; // ❌ 외부 Button 대신 네이티브 버튼 사용
-import { IoMdMore, IoMdHeart, IoMdHeartEmpty } from "react-icons/io"; // ❌ react-icons 대신 인라인 SVG 사용
+import Button from "@/components/common/Button";
+import { IoMdMore, IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
 
 // types
 import { SharedDreamComment } from "@/types";
-
-// --- 인라인 SVG 아이콘 정의 ---
 
 interface CommentItemProps {
   comment: SharedDreamComment;
