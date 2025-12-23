@@ -13,18 +13,18 @@ export const GET_MY_PROFILE = () => `/users/me`;
 export const PATCH_NICKNAME = () => `/users/me/nickname`;
 
 // Dream
-export const GET_MY_DREAM_LIST = () => `/dreams`;
-export const CREATE_DREAM = () => `/dreams`;
-export const GET_MY_DREAM_DETAIL = (dreamId: number) => `/dreams/${dreamId}`;
-export const UPDATE_DREAM = (dreamId: number) => `/dreams/${dreamId}`;
-export const DELETE_DREAM = (dreamId: number) => `/dreams/${dreamId}`;
+export const GET_MY_DREAM_LIST = () => `/dreams/me`;
+export const CREATE_DREAM = () => `/dreams/me`;
+export const GET_MY_DREAM_DETAIL = (dreamId: number) => `/dreams/me/${dreamId}`;
+export const UPDATE_DREAM = (dreamId: number) => `/dreams/me/${dreamId}`;
+export const DELETE_DREAM = (dreamId: number) => `/dreams/me/${dreamId}`;
 
 // AI Functions
-export const GENERATE_IMAGE = () => `/dreams/image`;
-export const GENERATE_INTERPRETATION = () => `/dreams/interpretation`;
+export const GENERATE_IMAGE = () => `/dreams/me/image`;
+export const GENERATE_INTERPRETATION = () => `/dreams/me/interpretation`;
 
 // Shared Dreams
-export const GET_SHARED_DREAM_LIST = () => `/dreams/shared`;
+export const GET_SHARED_DREAM_LIST = (cursor = 0) => `/dreams/shared?cursor=${cursor}`;
 export const GET_SHARED_DREAM_DETAIL = (dreamId: number) => `/dreams/shared/${dreamId}`;
 
 // Comments

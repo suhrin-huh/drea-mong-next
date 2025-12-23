@@ -19,7 +19,7 @@ export default function UserGreeting({ profile }: UserGreetingProps) {
 
   return (
     <div
-      className={`text-h3 flex flex-col items-center justify-center gap-3 overflow-hidden text-white transition-all duration-300 ease-in-out ${isOpen ? "h-[200px]" : "h-[600px]"} `}
+      className={`flex flex-col items-center justify-center gap-3 overflow-hidden text-h3 text-white transition-all duration-300 ease-in-out ${isOpen ? "h-[200px]" : "h-[600px]"} `}
     >
       <p>안녕하세요, {profile.nickname} 님!</p>
       <button onClick={handleClick}>Click!</button>

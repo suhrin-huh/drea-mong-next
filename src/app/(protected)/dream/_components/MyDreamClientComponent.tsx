@@ -43,7 +43,7 @@ export default function MyDreamClientComponent({ initialData }: MyDreamClientCom
   };
 
   return (
-    <form onSubmit={handleSubmit} className="gap-y-md flex flex-col">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-y-md">
       <DatePicker value={dream.writeTime} onChange={(value) => updateField("writeTime", value)} />
       <ContentEditor value={dream.content} onChange={(value) => updateField("content", value)} />
       <InterpGenerator
@@ -57,7 +57,7 @@ export default function MyDreamClientComponent({ initialData }: MyDreamClientCom
         getFormData={getFormData}
       />
       <ShareToggleBox value={dream.isShared} onChange={(value) => updateField("isShared", value)} />
-      <Button variant="primary" size="md" className="p-md mx-auto" rounded="md" type="submit">
+      <Button variant="primary" size="md" className="mx-auto p-md" rounded="md" type="submit">
         저장하기
       </Button>
     </form>

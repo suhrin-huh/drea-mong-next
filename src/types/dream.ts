@@ -29,8 +29,6 @@ export type MyDreamSummary = {
   content: Content;
 };
 
-export type MyDreamList = MyDreamSummary[];
-
 export type MyDreamDetail = {
   dreamId: number | null;
   writeTime: WriteTime;
@@ -45,8 +43,6 @@ export type SharedDreamSummary = {
   image: Image;
 };
 
-export type SharedDreamList = SharedDreamSummary[];
-
 export type SharedDreamComment = {
   commentId: number;
   content: string;
@@ -56,7 +52,7 @@ export type SharedDreamComment = {
   isLiked: boolean;
 };
 
-export type SharedDreamDetail = SharedDreamList & {
+export type SharedDreamDetail = {
   dreamId: DreamId;
   image: Image;
   content: Content;

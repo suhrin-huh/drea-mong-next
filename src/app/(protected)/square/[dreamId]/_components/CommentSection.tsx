@@ -37,11 +37,10 @@ export default function CommentSection({ initialCommentList }: CommentSectionPro
 
     console.log("새 댓글 전송 (API 호출 필요):", newContent);
     // 로직 연결 전이기 때문에 우선은 상태를 업데이트하여 목록 맨 아래에 새 댓글 추가
-    setComments((prevComments) => [ newComment, ...prevComments]);
-
+    setComments((prevComments) => [newComment, ...prevComments]);
   };
 
-  const handleDeleteComment = () => {}
+  const handleDeleteComment = () => {};
   return (
     <>
       {/* 1. 댓글 목록 영역 (스크롤 가능) - 상태를 전달 */}

@@ -19,7 +19,7 @@ export default function SettingsPage() {
 
   return (
     <div className="flex h-full flex-col">
-      <div className="text-bold text-h3 flex h-[150px] items-center justify-center font-bold text-white">
+      <div className="text-bold flex h-[150px] items-center justify-center text-h3 font-bold text-white">
         <p>환경 설정</p>
       </div>
       <BottomSheetLayout>

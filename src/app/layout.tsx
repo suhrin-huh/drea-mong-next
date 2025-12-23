@@ -29,7 +29,7 @@ export default function RootLayout({
       </head>
       <body>
         <div className="h-full w-full bg-slate-500">
-          <div className="mx-auto flex h-full min-h-[600px] w-full min-w-[300px] max-w-[500px] flex-col bg-[url(/background.svg)] bg-cover bg-center">
+          <div className="mx-auto flex h-full min-h-[600px] w-full max-w-[500px] min-w-[300px] flex-col bg-[url(/background.svg)] bg-cover bg-center">
             {children}
           </div>
         </div>
