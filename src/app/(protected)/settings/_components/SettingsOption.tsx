@@ -3,14 +3,14 @@
 interface SettingsOptionProps {
   label: string;
   icon?: React.ReactNode;
-  handleClick: () => void;
+  onClick: () => void;
 }
 
-export default function SettingsOption({ label, icon: Icon, handleClick }: SettingsOptionProps) {
+export default function SettingsOption({ label, icon: Icon, onClick }: SettingsOptionProps) {
   return (
     <div
       className="flex items-center justify-between p-lg active:bg-secondary/20"
-      onClick={handleClick}
+      onClick={onClick}
     >
       <p>{label}</p>
       {Icon}
