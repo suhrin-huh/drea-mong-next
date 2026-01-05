@@ -1,7 +1,7 @@
 "use client";
 
 // library
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 export function useNicknameModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +17,7 @@ export function useNicknameModal() {
   const close = () => {
     setIsOpen(false);
   };
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/\s/g, "");
     setNickname(value);
@@ -30,30 +31,20 @@ export function useNicknameModal() {
     }
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
+  const validate = (): boolean => {
     if (!nickname) {
       setError("닉네임을 입력해주세요.");
-      return;
+      return false;
     }
 
     if (nickname.length > 10) {
       setError("닉네임은 최대 10자까지 가능합니다.");
-      return;
+      return false;
     }
 
     setError("");
-
-    try {
-      // API 호출
-      // updateNickname();
-      alert("닉네임이 성공적으로 변경되었습니다.");
-      close();
-    } catch {
-      alert("닉네임 변경에 실패했습니다. 다시 시도해주세요.");
-    }
+    return true;
   };
 
-  return { isOpen, open, close, error, nickname, handleInputChange, handleSubmit };
+  return { isOpen, open, close, error, nickname, handleInputChange, validate };
 }
