@@ -20,7 +20,7 @@ export default function SettingsPage() {
     e.preventDefault();
 
     // 유효성 검증
-    if (nicknameModal.validate()) return;
+    if (!nicknameModal.validate()) return;
 
     try {
       // API 호출
