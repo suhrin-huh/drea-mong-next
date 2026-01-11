@@ -2,7 +2,9 @@
 "use client";
 
 import axios from "axios";
-import { API_BASE_URL } from "./endpoints";
+import { API_BASE_URL } from "@/constants/api-routes";
+
+// axios 인스턴스 생성
 
 const httpClient = axios.create({
   baseURL: API_BASE_URL,

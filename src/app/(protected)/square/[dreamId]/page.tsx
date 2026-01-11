@@ -4,9 +4,11 @@ import HeaderBar from "@/components/bar/HeaderBar";
 import SharedDreamContent from "./_components/SharedDreamContent";
 import CommentSection from "./_components/CommentSection";
 
+// services
+import { getSharedDreamDetailServer } from "@/services/server";
+
 // types
 import { DreamId } from "@/types";
-import { getSharedDreamDetailServer } from "@/lib/api/queries";
 
 interface SquareDetailProps {
   params: Promise<{ dreamId: DreamId }>;

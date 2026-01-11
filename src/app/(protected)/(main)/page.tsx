@@ -2,7 +2,9 @@
 import BottomSheetLayout from "@/components/layout/BottomSheetLayout";
 import UserGreeting from "./_components/UserGreeting";
 import MainClientComponent from "./_components/MainClientComponent";
-import { getMyProfileServer, getMyDreamListServer } from "@/lib/api/queries";
+
+// services
+import { getMyProfileServer, getMyDreamListServer } from "@/services/server";
 
 export default async function MainPage() {
   // 유저 정보 가져오기
