@@ -45,7 +45,7 @@ export async function getMyProfileClient() {
 /**
  * 닉네임 수정 - 클라이언트 전용
  */
-export async function patchNicknameClient(nickname: string) {
+export async function updateNicknameClient(nickname: string) {
   const response = await httpClient.patch<ApiResponse<Profile>>(
     UPDATE_NICKNAME(),
     { nickname },
