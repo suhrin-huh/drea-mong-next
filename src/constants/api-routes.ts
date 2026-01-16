@@ -2,15 +2,11 @@ export const API_BASE_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1`; //
 
 // Auth
 export const LOGIN = () => `/auth/login`;
-export const LOGOUT = () => ``;
-
-// Oauth
-export const OAUTH_LOGIN = (provider: string) => `/auth/oauth/${provider}`;
-export const OAUTH_LOGOUT = (provider: string) => `/auth/oauth/${provider}/callback`;
+export const LOGOUT = () => `/auth/logout`;
 
 // User
 export const GET_MY_PROFILE = () => `/users/me`;
-export const PATCH_NICKNAME = () => `/users/me/nickname`;
+export const UPDATE_NICKNAME = () => `/users/me/nickname`;
 
 // Dream
 export const GET_MY_DREAM_LIST = () => `/dreams/me`;
