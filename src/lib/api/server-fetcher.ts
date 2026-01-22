@@ -2,7 +2,7 @@
 import { cookies } from "next/headers";
 
 // config
-import { API_BASE_URL } from "../endpoints";
+import { API_BASE_URL } from "@/constants/api-routes";
 
 // types
 import { ApiResponse } from "@/types/api";
